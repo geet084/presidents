@@ -6,6 +6,7 @@ describe('actions', () => {
       type: 'IS_LOADING',
       isLoading: false
     }
+    
     const result = actions.isLoading(false);
     expect(result).toEqual(expectedAction);
   })
@@ -15,6 +16,7 @@ describe('actions', () => {
       type: 'HAS_ERRORED',
       message: 'error'
     }
+
     const result = actions.hasErrored('error')
     expect(result).toEqual(expectedAction);
   })
@@ -24,6 +26,7 @@ describe('actions', () => {
       type: 'FETCH_PRES_SUCCESS',
       presidents: [{number: 1}, {number: 2}]
     }
+
     const result = actions.fetchPresSuccess([{ number: 1 }, { number: 2 }])
     expect(result).toEqual(expectedAction);
   })

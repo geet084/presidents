@@ -6,6 +6,7 @@ describe('mapDispatchToProps', () => {
     const mockUrl = 'http://localhost:9999'
     const mockDispatch = jest.fn();
     const mappedProps = mapDispatchToProps(mockDispatch);
+
     mappedProps.fetchPres(mockUrl);
 
     expect(mockDispatch).toHaveBeenCalled()
@@ -20,11 +21,13 @@ describe('mapStateToProps', () => {
       isLoading: false,
       fakeState: 'other things'
     }
+
     const expected = {
       presidents: [{ number: 1 }, { number: 2 }],
       hasErrored: '',
       isLoading: false,
     }
+    
     const mappedProps = mapStateToProps(mockState);
     expect(mappedProps).toEqual(expected)
   })
