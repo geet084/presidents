@@ -1,18 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+
 import { mapStateToProps, mapDispatchToProps } from './App';
-import { fetchPres } from '../../thunks/fetchPres'
 
 describe('mapDispatchToProps', () => {
-  it.skip('calls dispatch with a url to fetch presidents', () => {
+  it('calls dispatch with a url to fetch presidents', () => {
     const mockUrl = 'http://localhost:9999'
     const mockDispatch = jest.fn();
-    const actionToDispatch = fetchPres(mockUrl)
     const mappedProps = mapDispatchToProps(mockDispatch);
     mappedProps.fetchPres(mockUrl);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    expect(mockDispatch).toHaveBeenCalled()
   })
 })
 
