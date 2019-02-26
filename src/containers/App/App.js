@@ -13,11 +13,14 @@ class App extends Component {
   }
 
   render() {
-    let { isLoading, presidents } = this.props;
+    let { isLoading, hasErrored, presidents } = this.props;
+    
     return (
       <div className="App">
         <header>
           <h1>Welcome to the presidents page</h1>
+          {hasErrored !== '' &&
+            <h3>An error occurred trying to retrieve your data: {hasErrored}</h3>}
         </header>
         <main className='display'>
           {isLoading && <Loading />}

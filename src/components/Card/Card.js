@@ -2,7 +2,6 @@ import React from 'react';
 import './Card.scss';
 
 export const Card = (props) => {
-  console.log('card??',props)
   return (
     <div className='card'>
       <h4>Number: {props.number}</h4>
