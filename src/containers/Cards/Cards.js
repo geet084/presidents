@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card/Card'
+import './Cards.scss';
 
 class Cards extends Component {
   render() {
     let cards = this.props.presidents.map(pres => <Card {...pres}/>)
     return (
-      <div>{cards}</div>
+      <div className='card-cont'>
+        {cards}
+      </div>
     )
   }
 }

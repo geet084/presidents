@@ -19,8 +19,10 @@ class App extends Component {
         <header>
           <h1>Welcome to the presidents page</h1>
         </header>
-        {isLoading && <Loading />}
-        {!isLoading && <Cards presidents={presidents} />}
+        <main className='display'>
+          {isLoading && <Loading />}
+          {!isLoading && <Cards presidents={presidents} />}
+        </main>
       </div>
     );
   }
